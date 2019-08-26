@@ -11,6 +11,9 @@ class Controller extends BaseController {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function homepage() {
-
+        $title = 'Título';
+        return view('welcome', [
+            'title' => $title,
+        ]);
     }
 }
