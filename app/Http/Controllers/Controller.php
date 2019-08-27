@@ -16,4 +16,15 @@ class Controller extends BaseController {
             'title' => $title,
         ]);
     }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Method to user login VIEW
+    |--------------------------------------------------------------------------
+     */
+
+    public function fazerLogin() {
+        return view('user.login');
+    }
+
 }
