@@ -1,0 +1,43 @@
+.form-padrao {
+	float: left;
+	width: 100%;
+
+	label {
+		float: left;
+		width: 49%;
+		height: 60px;
+		padding: 7px 15px;
+		border: 1px solid $lightgrey;
+		background: $white;
+		border-radius: 5px;
+		margin-bottom: 20px;
+		&:nth-last-of-type(odd) {
+			margin-left: 2%;
+		}
+		span {
+			float: left;
+			width: 100%;
+			font: 400 .75em 'Arial';
+			color: $mediumgrey;
+			padding-bottom: 5px;
+		}
+		& + .submit {
+			line-height: 47px;
+			transition: all 0.3s;
+			border: none;
+			&:hover {
+				box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
+				transition: all 0.3s;
+			}
+		}
+	}
+	input {
+		width: 100%;
+	}
+	.submit {
+		text-align: center;
+		font-size: 24px;
+		background: $main;
+		color: $white;
+	}
+}

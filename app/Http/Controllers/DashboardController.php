@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\UserRepository;
 use App\Validators\UserValidator;
+use Auth;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,7 @@ class DashboardController extends Controller {
 
         try {
             if (env('PASSWORD_HASH')) {
-                \Auth::attempt($data, false);
+                Auth::attempt($data, false);
             } else {
                 $user = $this->repository->findWhere(['email' => $request->get('username')])->first();
 
@@ -40,7 +41,7 @@ class DashboardController extends Controller {
                     throw new Exception('A senha informada é inválida.');
                 };
 
-                \Auth::login($user);
+                Auth::login($user);
             };
 
             return redirect()->route('user.dashboard');
