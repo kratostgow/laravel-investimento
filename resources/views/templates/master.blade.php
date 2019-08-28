@@ -8,6 +8,7 @@
     @yield('css-view')
     <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
     <link rel="stylesheet" href="//cdn.materialdesignicons.com/4.2.95/css/materialdesignicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
     @include('templates/menu-lateral')
