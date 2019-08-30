@@ -35,21 +35,21 @@ class DashboardController extends Controller {
                 $user = $this->repository->findWhere(['email' => $request->get('username')])->first();
 
                 if (!$user) {
-                    throw new Exception('O email informado é inválido.');
+                    throw new Exception("Dados de usuário incorretos!");
                 }
-                if ($user->password == $request->get('password')) {
-                    throw new Exception('A senha informada é inválida.');
+                if ($user->password != $request->get('password')) {
+                    throw new Exception("Senha do usuário incorreta!");
                 };
 
                 Auth::login($user);
             };
 
+            abort_unless(Auth::check(), 403);
+
             return redirect()->route('user.dashboard');
+
         } catch (Exception $e) {
             return $e->getMessage();
         }
-
-        dd($request->all());
-        echo 'Fuck';
     }
 }

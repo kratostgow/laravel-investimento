@@ -1,13 +1,13 @@
 <nav id="principal">
     <ul>
         <li>
-            <a href="/dashboard">
+            <a href="{{ route('user.dashboard') }}">
                 <i class="mdi mdi-view-dashboard"></i>
                 <h3>Dashboard</h3>
             </a>
         </li>
         <li>
-            <a href="/user">
+            <a href="{{ route('user.index') }}">
                 <i class="mdi mdi-account-box-multiple"></i>
                 <h3>Usuários</h3>
             </a>
